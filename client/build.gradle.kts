@@ -12,15 +12,18 @@ version = "1.0"
 // Enable JS(IR) target and add dependencies
 kotlin {
     js(IR) {
-        browser()
+        browser{ }
         binaries.executable()
     }
     sourceSets {
         val jsMain by getting {
             dependencies {
-                implementation(project(":core"))
+                api(project(":common"))
                 implementation(compose.web.core)
                 implementation(compose.runtime)
+                implementation("io.ktor:ktor-client-core:1.6.2")
+                implementation("io.ktor:ktor-client-js:1.6.2")
+                implementation("app.softwork:routing-compose:0.0.27")
             }
         }
     }

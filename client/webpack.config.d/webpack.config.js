@@ -1,5 +1,7 @@
-const oldDevServer = config.devServer;
 config.devServer = {
-    ...oldDevServer,
-    port: 9000
+    ...config.devServer,
+    port: 9000,
+    historyApiFallback: {
+        index: 'index.html'
+    }
 }
