@@ -1,8 +1,14 @@
-package org.chiachat.website
+package org.chiachat.website.components.roadmap
 
 import org.jetbrains.compose.web.css.*
 
-object HomeStyle : StyleSheet() {
+object RoadmapStyle : StyleSheet() {
+    init {
+        ".logo" style {
+            width(64.px)
+            width(64.px)
+        }
+    }
     val container by style { // container is a class
         display(DisplayStyle.Flex)
         padding(14.px, 16.px)
@@ -10,5 +16,10 @@ object HomeStyle : StyleSheet() {
         property("font-family", "Arial, Helvetica, sans-serif")
         textAlign("center")
         color(Color.limegreen)
+    }
+
+    val logo by style {
+        width(64.px)
+        width(64.px)
     }
 }
