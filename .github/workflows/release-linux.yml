@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      -
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,8 +22,8 @@ jobs:
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
       - name: Deploy
-          uses: peaceiris/actions-gh-pages@v3
-          if: ${{ github.ref == 'refs/heads/main' }}
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./client/build/distributions
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./client/build/distributions/
