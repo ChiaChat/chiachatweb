@@ -4,12 +4,11 @@ import androidx.compose.runtime.Composable
 import app.softwork.routingcompose.BrowserRouter
 import org.chiachat.website.components.about.aboutPage
 import org.chiachat.website.components.community.communityPage
-import org.jetbrains.compose.web.renderComposable
 import org.chiachat.website.components.home.homePage
 import org.chiachat.website.components.news.newsPage
 import org.chiachat.website.components.roadmap.roadmapPage
 import org.jetbrains.compose.web.dom.*
-
+import org.jetbrains.compose.web.renderComposable
 
 fun main() {
     renderComposable(rootElementId = "root") {
@@ -18,24 +17,24 @@ fun main() {
 }
 
 @Composable
-fun mainPage(){
+fun mainPage() {
     BrowserRouter(initRoute = "/") {
-        route("news"){
+        route("news") {
             noMatch {
                 newsPage()
             }
         }
-        route("roadmap"){
+        route("roadmap") {
             noMatch {
                 roadmapPage()
             }
         }
-        route("community"){
+        route("community") {
             noMatch {
                 communityPage()
             }
         }
-        route("about"){
+        route("about") {
             noMatch {
                 aboutPage()
             }
@@ -45,4 +44,3 @@ fun mainPage(){
         }
     }
 }
-

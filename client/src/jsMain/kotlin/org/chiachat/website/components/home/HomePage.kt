@@ -7,7 +7,6 @@ import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.css.selectors.className
 import org.jetbrains.compose.web.dom.*
 
-
 @Composable
 fun homePage() {
     HomeStyle.container
@@ -35,7 +34,7 @@ fun navBar() {
             }
         }
     ) {
-        for(i in 0 until links.size / 2) {
+        for (i in 0 until links.size / 2) {
             val link = links[i]
             Li {
                 navButton(link, "/" + link.lowercase())
@@ -44,7 +43,7 @@ fun navBar() {
         Li {
             imageButton("images/cc_icon_trans.png")
         }
-        for(i in links.size / 2 until links.size ) {
+        for (i in links.size / 2 until links.size) {
             val link = links[i]
             Li {
                 navButton(link, "/" + link.lowercase())
@@ -54,15 +53,15 @@ fun navBar() {
 }
 
 @Composable
-fun navButton(text: String, route: String){
+fun navButton(text: String, route: String) {
     NavLink(route) {
         Text(text)
     }
 }
 
 @Composable
-fun imageButton(src: String){
+fun imageButton(src: String) {
     NavLink("/") {
-        Img(src = src, attrs = { classes(HomeStyle.logo)})
+        Img(src = src, attrs = { classes(HomeStyle.logo) })
     }
 }

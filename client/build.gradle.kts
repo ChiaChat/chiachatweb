@@ -12,7 +12,7 @@ version = "1.0"
 // Enable JS(IR) target and add dependencies
 kotlin {
     js(IR) {
-        browser{ }
+        browser { }
         binaries.executable()
     }
     sourceSets {

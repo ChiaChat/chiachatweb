@@ -9,7 +9,6 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 
-
 @Composable
 fun aboutPage() {
     navBar()
@@ -26,14 +25,14 @@ fun landing() {
 }
 
 @Composable
-fun team(){
+fun team() {
     Div {
         Person.values().map { personCard(it) }
     }
 }
 
 @Composable
-fun personCard(person: Person){
+fun personCard(person: Person) {
     Text(person.fullName)
     Div()
     imageButton(person.image, person.link)
@@ -41,13 +40,16 @@ fun personCard(person: Person){
 }
 
 @Composable
-fun imageButton(image: String, navLink: String){
+fun imageButton(image: String, navLink: String) {
     NavLink(navLink) {
-        Img(src = image, attrs = {
-            style {
-                width(64.px)
-                height(64.px)
+        Img(
+            src = image,
+            attrs = {
+                style {
+                    width(64.px)
+                    height(64.px)
+                }
             }
-        })
+        )
     }
 }
