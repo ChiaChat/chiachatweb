@@ -1,11 +1,12 @@
-name: JPackage Linux
+name: Deploy Github Pages
 
 on:
-  release:
-    types: [ released, prereleased ]
-
+  push:
+    branches:
+      - master
+      -
 jobs:
-  gradle:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,14 +18,13 @@ jobs:
           distribution: 'adopt'
       - uses: eskatos/gradle-command-action@v1
         with:
-          arguments: desktop:packageDeb
+          arguments: client:build
           wrapper-cache-enabled: true
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
-      - uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            desktop/build/compose/binaries/main/deb/*.deb
-            LICENSE
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          if: ${{ github.ref == 'refs/heads/main' }}
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./client/build/distributions
