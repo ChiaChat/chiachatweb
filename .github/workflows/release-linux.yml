@@ -18,7 +18,7 @@ jobs:
       - uses: eskatos/gradle-command-action@v1
         with:
           arguments: client:build
-          wrapper-cache-enabled: true
+          distributions-cache-enabled: true
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
       - name: Deploy
