@@ -1,0 +1,2 @@
+To use gradle action you must run this command on the gradlew executable:
+git update-index --chmod=+x ./gradlew
