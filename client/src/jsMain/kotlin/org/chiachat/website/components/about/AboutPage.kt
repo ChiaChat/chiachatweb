@@ -1,7 +1,6 @@
 package org.chiachat.website.components.about
 
 import androidx.compose.runtime.Composable
-import app.softwork.routingcompose.NavLink
 import org.chiachat.website.components.home.navBar
 import org.chiachat.website.data.Person
 import org.jetbrains.compose.web.css.*

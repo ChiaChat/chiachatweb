@@ -1,8 +1,6 @@
 package org.chiachat.website.components.home
 
 import org.jetbrains.compose.web.css.*
-import org.jetbrains.compose.web.css.keywords.auto
-import org.jetbrains.compose.web.css.selectors.attr
 
 object HomeStyle : StyleSheet() {
     val container by style { // container is a class
