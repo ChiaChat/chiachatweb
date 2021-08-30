@@ -9,7 +9,6 @@ import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun homePage() {
-    HomeStyle.container
     navBar()
     Div()
     landing()
@@ -27,11 +26,6 @@ fun navBar() {
     Ul(
         attrs = {
             className("navigationBar")
-            style {
-                overflow("hidden")
-                width(auto)
-                display(DisplayStyle.Inline)
-            }
         }
     ) {
         for (i in 0 until links.size / 2) {

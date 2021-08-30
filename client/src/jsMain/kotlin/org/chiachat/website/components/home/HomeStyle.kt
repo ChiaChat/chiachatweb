@@ -1,15 +1,14 @@
 package org.chiachat.website.components.home
 
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.keywords.auto
+import org.jetbrains.compose.web.css.selectors.attr
 
 object HomeStyle : StyleSheet() {
     val container by style { // container is a class
-        display(DisplayStyle.Flex)
-        padding(14.px, 16.px)
-        // custom property (or not supported out of a box)
-        property("font-family", "Arial, Helvetica, sans-serif")
-        textAlign("center")
-        color(Color.limegreen)
+        width(80.percent)
+        property("margin", "0 auto")
+        backgroundColor(Color.darkgray)
     }
 
     val logo by style {

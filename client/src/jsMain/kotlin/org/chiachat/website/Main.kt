@@ -7,7 +7,6 @@ import org.chiachat.website.components.community.communityPage
 import org.chiachat.website.components.home.homePage
 import org.chiachat.website.components.news.newsPage
 import org.chiachat.website.components.roadmap.roadmapPage
-import org.jetbrains.compose.web.dom.*
 import org.jetbrains.compose.web.renderComposable
 
 fun main() {

@@ -5,6 +5,7 @@ import app.softwork.routingcompose.NavLink
 import org.chiachat.website.components.home.navBar
 import org.chiachat.website.data.Person
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
@@ -41,7 +42,7 @@ fun personCard(person: Person) {
 
 @Composable
 fun imageButton(image: String, navLink: String) {
-    NavLink(navLink) {
+    A(navLink) {
         Img(
             src = image,
             attrs = {
